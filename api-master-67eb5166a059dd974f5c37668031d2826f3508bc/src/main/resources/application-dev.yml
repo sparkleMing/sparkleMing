@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://10.0.0.8:3306/yisong?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&verifyServerCertificate=false&useSSL=false
+      username: root
+      password: 123456
+
+
+logging:
+  level:
+    root: error
+    org.springframework: info
+    org.mybatis: error
+    com.sumixer.ys: debug
+    me.chanjar.weixin: debug
