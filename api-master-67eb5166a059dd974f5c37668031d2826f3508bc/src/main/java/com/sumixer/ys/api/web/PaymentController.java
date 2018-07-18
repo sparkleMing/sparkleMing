@@ -69,7 +69,7 @@ public class PaymentController {
             orderService.pay(order);
             YsStore store=storeService.findByStoreId(order.getStoreId());
             String store_phone=store.getContactPhone();
-            return ResultGenerator.success("请求已发给商家，请等待商家处理");
+            return ResultGenerator.success("请求已发给商家，等待商家处理");
         }
     }
 
