@@ -73,18 +73,6 @@ public class PaymentController {
         }
     }
 
-    @PostMapping("/orders/refund_real")
-    public Result refund_real(@LoginUser YsUser ysUser,
-                        @RequestParam("orderId") String orderId, HttpServletRequest request,
-                         @RequestParam("refundDesc") String refundDesc) throws WxPayException {
-        YsOrder order = orderService.findByUserIdAndOrderId(ysUser.getUserId(), orderId);
-        if (order == null) {
-            return ResultGenerator.fail("订单不存在");
-        }
-        WxPayRefundResult  result = wepayService.refundOrder(ysUser, order, refundDesc,request);
-        return wepayService.transformRefundResult(result);
-    }
-
 
 
     @PostMapping("/orders/wepay/fail")
